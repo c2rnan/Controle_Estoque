@@ -1,8 +1,8 @@
-<h1 align="center">🏦 Banco Iron - Sistema Bancário em Python</h1>
+<h1 align="center">📦 Controle de Estoque - Sistema em Python</h1>
 
 <p align="center">
-Sistema bancário desenvolvido em Python com foco em lógica de programação,
-estrutura de dados e organização modular.
+Sistema de gerenciamento de estoque desenvolvido em Python com foco em
+lógica de programação, organização modular e controle de dados.
 </p>
 
 <br>
@@ -10,15 +10,16 @@ estrutura de dados e organização modular.
 <h2>📌 Sobre o Projeto</h2>
 
 <p>
-O <b>Banco Iron</b> é uma aplicação executada no terminal que simula operações
-bancárias essenciais. O projeto foi desenvolvido com o objetivo de fortalecer
-fundamentos em programação, aplicando regras de negócio reais em um ambiente controlado.
+O <b>Controle de Estoque</b> é uma aplicação executada no terminal que simula
+operações essenciais de gerenciamento de produtos.
+O projeto foi desenvolvido com o objetivo de fortalecer fundamentos em
+programação, aplicando regras de negócio reais em um ambiente controlado.
 </p>
 
 <p>
-A aplicação permite criar contas, realizar movimentações financeiras e acompanhar
-o histórico de transações, utilizando <b>dicionários aninhados</b> como estrutura
-principal de armazenamento.
+A aplicação permite cadastrar produtos, realizar entradas e saídas de estoque,
+visualizar listagens e gerar relatório financeiro, utilizando
+<b>dicionários aninhados</b> como estrutura principal de armazenamento.
 </p>
 
 <br>
@@ -26,11 +27,12 @@ principal de armazenamento.
 <h2>🚀 Funcionalidades</h2>
 
 <ul>
-<li><b>Criação de Conta:</b> Geração automática de número de conta e cadastro de titular.</li>
-<li><b>Depósito:</b> Atualização de saldo com validação de valor positivo.</li>
-<li><b>Saque:</b> Validação de saldo suficiente antes da retirada.</li>
-<li><b>Consulta de Saldo:</b> Exibição formatada com duas casas decimais.</li>
-<li><b>Histórico de Movimentações:</b> Registro completo de depósitos e saques.</li>
+<li><b>Cadastro de Produto:</b> Geração automática de código e registro inicial no histórico.</li>
+<li><b>Entrada de Estoque:</b> Atualização de quantidade com validação de valor positivo.</li>
+<li><b>Saída de Estoque:</b> Validação de estoque suficiente antes da retirada.</li>
+<li><b>Listagem de Produtos:</b> Exibição organizada com código, nome, preço e quantidade.</li>
+<li><b>Relatório Geral:</b> Cálculo do valor total armazenado em estoque.</li>
+<li><b>Histórico de Movimentações:</b> Registro completo de entradas e saídas.</li>
 <li><b>Menu Interativo:</b> Controle de fluxo contínuo até encerramento do sistema.</li>
 </ul>
 
@@ -38,21 +40,22 @@ principal de armazenamento.
 
 <h2>🧠 Estrutura de Dados</h2>
 
-<p>As contas são armazenadas em um dicionário principal chamado <b>banco</b>:</p>
+<p>Os produtos são armazenados em um dicionário principal chamado <b>estoque</b>:</p>
 
 <pre>
 {
-    numero_conta: {
-        "Titular": "Nome do Cliente",
-        "Saldo": 0.00,
+    codigo_produto: {
+        "Nome": "Produto",
+        "Preço": 0.00,
+        "Quantidade": 0,
         "Historico": []
     }
 }
 </pre>
 
 <p>
-Essa estrutura permite acesso direto por número de conta e atualização dinâmica
-das informações financeiras.
+Essa estrutura permite acesso direto pelo código do produto e atualização dinâmica
+das informações de estoque.
 </p>
 
 <br>
@@ -60,11 +63,13 @@ das informações financeiras.
 <h2>⚙️ Regras de Negócio Implementadas</h2>
 
 <ul>
-<li>Não permite depósito com valor menor ou igual a zero.</li>
-<li>Não permite saque com valor menor ou igual a zero.</li>
-<li>Impede saque superior ao saldo disponível.</li>
-<li>Valida existência da conta antes de qualquer operação.</li>
+<li>Não permite cadastro com preço ou quantidade negativos.</li>
+<li>Não permite entrada com valor menor ou igual a zero.</li>
+<li>Não permite saída com valor menor ou igual a zero.</li>
+<li>Impede saída superior à quantidade disponível.</li>
+<li>Valida existência do produto antes de qualquer operação.</li>
 <li>Registra todas as movimentações no histórico.</li>
+<li>Utiliza tratamento de exceções para evitar erros de entrada.</li>
 </ul>
 
 <br>
@@ -73,10 +78,11 @@ das informações financeiras.
 
 <ul>
 <li><b>Python 3</b></li>
-<li>Estruturas de dados (dicionários)</li>
+<li>Estruturas de dados (dicionários e listas)</li>
 <li>Funções</li>
 <li>Estruturas condicionais</li>
 <li>Laços de repetição</li>
+<li>Tratamento de exceções (try/except)</li>
 <li>F-strings para formatação monetária</li>
 </ul>
 
@@ -86,8 +92,22 @@ das informações financeiras.
 
 <p>
 Consolidar conhecimentos em lógica de programação e simular a construção
-de um sistema funcional aplicando princípios fundamentais de desenvolvimento back-end.
+de um sistema funcional aplicando princípios fundamentais de desenvolvimento
+back-end e controle de dados.
 </p>
+
+<br>
+
+<h2>📈 Possíveis Evoluções</h2>
+
+<ul>
+<li>Persistência de dados em arquivo JSON</li>
+<li>Implementação com orientação a objetos</li>
+<li>Banco de dados (SQLite)</li>
+<li>Interface gráfica (Tkinter)</li>
+<li>Sistema de busca por nome</li>
+<li>Exclusão de produtos</li>
+</ul>
 
 <br>
 
